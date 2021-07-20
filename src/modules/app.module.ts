@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
+import { config } from 'dotenv';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilmeModule } from './film';
 import { CharacterModule } from './character';
+
+config();
 
 @Module({
   imports: [
