@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FilmeModule } from './film';
 
 @Module({
   imports: [
@@ -12,11 +11,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'sevencoders',
       password: 'sevencoders',
       database: 'starwarswiki',
-      entities: [],
+      entities: [__dirname + '../../**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    FilmeModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
