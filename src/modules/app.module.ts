@@ -3,6 +3,7 @@ import { config } from 'dotenv';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilmeModule } from './film';
 import { CharacterModule } from './character';
+import { SearchModule } from './search';
 
 config();
 
@@ -31,6 +32,7 @@ const DB_CONFIG =
     }),
     FilmeModule,
     CharacterModule,
+    SearchModule,
   ],
 })
 export class AppModule {}
